@@ -50,10 +50,10 @@ export default function App() {
 					// 	headerLeft: () => <CancelButton onPress={navigation.goBack} />,
 					// })}
 				>
-					{/* <Stack.Screen name={ROUTES.SignIn} component={SignIn} /> */}
+					<Stack.Screen name={ROUTES.SignIn} component={SignIn} />
 
-					{/* <Stack.Screen name={ROUTES.EnterNumber} component={EnterNumber} /> */}
-					{/* <Stack.Screen name={ROUTES.VerifyPhone} component={VerifyPhone} /> */}
+					<Stack.Screen name={ROUTES.EnterNumber} component={EnterNumber} />
+					<Stack.Screen name={ROUTES.VerifyPhone} component={VerifyPhone} />
 					<Stack.Screen name={ROUTES.Home} component={BottomTabs} />
 					{/* <Stack.Screen
 						name={ROUTES.Home}
@@ -64,8 +64,6 @@ export default function App() {
 
 					<Stack.Screen name={ROUTES.Summary} component={Summary} />
 				</Stack.Group>
-
-				{/* <Stack.Screen name="EnterNumber" component={EnterNumber} /> */}
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

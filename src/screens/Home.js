@@ -116,6 +116,11 @@ const Home = ({navigation}) => {
 						Promo & Discount
 					</Text>
 				</View>
+				<TouchableOpacity
+					style={styles.btn_primary}
+					onPress={() => navigation.navigate("Summary")}>
+					<Text style={styles.btn_pritext}> Summary page </Text>
+				</TouchableOpacity>
 			</View>
 		</SafeAreaView>
 	);
