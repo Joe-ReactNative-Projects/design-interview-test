@@ -64,26 +64,22 @@ const Home = ({navigation}) => {
 					<View>
 						<MaterialCommunityIcons
 							name="bank-transfer-in"
-							size={24}
-							color="black"
+							size={40}
+							color="white"
 						/>
-						<Text>Transfer</Text>
+						<Text style={{color: "white"}}>Transfer</Text>
 					</View>
 					<View>
 						<MaterialCommunityIcons
 							name="bank-transfer-in"
-							size={24}
-							color="black"
+							size={40}
+							color="white"
 						/>
-						<Text>Transfer</Text>
+						<Text style={{color: "white"}}>Top Up</Text>
 					</View>
 					<View>
-						<MaterialCommunityIcons
-							name="bank-transfer-in"
-							size={24}
-							color="black"
-						/>
-						<Text>Transfer</Text>
+						<MaterialCommunityIcons name="history" size={40} color="white" />
+						<Text style={{color: "white"}}>History</Text>
 					</View>
 				</View>
 				<View
