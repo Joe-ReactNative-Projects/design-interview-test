@@ -9,13 +9,43 @@ import {
 } from "react-native";
 import {styles} from "../globalstyles";
 import Logo from "../../assets/files/logo.jpg";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {FontAwesome} from "@expo/vector-icons";
 import {AntDesign} from "@expo/vector-icons";
+import {auth} from "../../firebase";
 
 const Signin = ({navigation}) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+
+	useEffect(() => {
+		auth.onAuthStateChanged((user) => {
+			if (user) {
+				navigation.navigate("EnterNumber");
+			}
+		});
+		// return unsubscribe;
+	}, []);
+
+	const handleSignUp = () => {
+		auth
+			.createUserWithEmailAndPassword(email, password)
+			.then((userCredentials) => {
+				const user = userCredentials.user;
+				console.log(user.email);
+			})
+			.catch((error) => alert(error.message));
+	};
+
+	const handleSignIn = () => {
+		auth
+			.signInWithEmailAndPassword(email, password)
+			.then((userCredentials) => {
+				const user = userCredentials.user;
+				console.log("Logged in with:", user.email);
+			})
+			.catch((error) => alert(error.message));
+	};
 
 	return (
 		<SafeAreaView style={styles.safearea}>
@@ -48,7 +78,8 @@ const Signin = ({navigation}) => {
 					{/* Button */}
 					<TouchableOpacity
 						style={styles.btn_primary}
-						onPress={() => navigation.navigate("EnterNumber")}>
+						// onPress={() => navigation.navigate("EnterNumber")}
+						onPress={handleSignIn}>
 						<Text style={styles.btn_pritext}> Login </Text>
 					</TouchableOpacity>
 
